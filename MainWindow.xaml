@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:leonardo_benetti_d7_avaliacao"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Autenticação de usuário" Height="660" Width="480"
+        ResizeMode="NoResize">
+    <Grid Name="MainGrid">
 
+        <Label Content="Autenticação de usuário"
+               FontSize="24"
+               FontWeight="Heavy"
+               HorizontalAlignment="Center"
+               Margin="0,60,0,0"/>
+
+        <Label Content="Usuário"
+               FontSize="16"
+               FontWeight="Normal"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Left"
+               Padding="0"
+               Margin="60,145,0,0"
+               />
+
+        <TextBox
+            Text="{Binding UserName}"
+            Width="360"
+            Height="60"
+            Background="LightGray"
+            HorizontalAlignment="Left" 
+            HorizontalContentAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            Foreground="Black"
+            FontSize="16"
+            Padding="10"
+            Margin="60,180,0,0"
+            />
+
+        <Label Content="Senha"
+                FontSize="16"
+                FontWeight="Normal"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                HorizontalContentAlignment="Left"
+                Padding="0"
+                Margin="60,325,0,0"
+                />
+
+        <TextBox
+            Text="{Binding Password}"
+            Width="360"
+            Height="60"
+            Background="LightGray"
+            HorizontalAlignment="Left" 
+            HorizontalContentAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            Foreground="Black"
+            FontSize="16"
+            Padding="10"
+            Margin="60,360,0,0"
+            />
+
+        <Button Content="Acessar"
+                Width="240"
+                Height="60"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,540,0,0"
+                FontSize="16"
+                FontWeight="Normal" Click="Button_Click"/>
     </Grid>
 </Window>

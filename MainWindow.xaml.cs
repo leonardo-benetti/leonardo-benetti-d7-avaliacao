@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using leonardo_benetti_d7_avaliacao.Model;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace leonardo_benetti_d7_avaliacao
 {
@@ -20,9 +9,33 @@ namespace leonardo_benetti_d7_avaliacao
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly SQLiteContext context;
+
+        User LoginAttempt = new();
+
+        public MainWindow(SQLiteContext context)
         {
+            this.context = context;
             InitializeComponent();
+            MainGrid.DataContext = LoginAttempt;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            User? db_user = context.Users.Where(user => 
+            user.UserName == LoginAttempt.UserName && user.Password == LoginAttempt.Password
+            ).FirstOrDefault();
+
+            if (db_user != null) // login success
+            {
+                var result = MessageBox.Show("Usuário autenticado!");
+            }
+            else
+            {
+                var result = MessageBox.Show("Credenciais inválidas!");
+            }
+            LoginAttempt = new();
+            MainGrid.DataContext = LoginAttempt;
         }
     }
 }
