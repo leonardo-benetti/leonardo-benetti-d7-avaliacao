@@ -7,71 +7,98 @@
         mc:Ignorable="d"
         Title="Autenticação de usuário" Height="660" Width="480"
         ResizeMode="NoResize">
-    <Grid Name="MainGrid">
+    <Grid Name="MainGrid" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition  Width="60"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <Label Content="Autenticação de usuário"
+        <Label Grid.Column="1" Grid.Row="0"
+               Content="Autenticação de usuário"
                FontSize="24"
+               FontFamily="Inter"
+               Height="29"
+               Width="287"
                FontWeight="Heavy"
+               VerticalAlignment="Top"
                HorizontalAlignment="Center"
+               Padding="0"
                Margin="0,60,0,0"/>
 
-        <Label Content="Usuário"
+        <Label Grid.Column="1" Grid.Row="1"
+               Content="Usuário"
                FontSize="16"
-               FontWeight="Normal"
+               FontFamily="Inter"
+               Width="58"
+               Height="19"
                HorizontalAlignment="Left"
-               VerticalAlignment="Top"
+               FontWeight="Normal"
                HorizontalContentAlignment="Left"
                Padding="0"
-               Margin="60,145,0,0"
+               Margin="0,56,0,0"
                />
 
-        <TextBox
+        <TextBox Grid.Row="2" Grid.Column="1"
             Text="{Binding UserName}"
             Width="360"
             Height="60"
             Background="LightGray"
-            HorizontalAlignment="Left" 
             HorizontalContentAlignment="Left"
-            VerticalAlignment="Top"
             VerticalContentAlignment="Center"
             Foreground="Black"
             FontSize="16"
-            Padding="10"
-            Margin="60,180,0,0"
+            FontFamily="Inter"
+            Margin="0,16,0,0"
             />
 
-        <Label Content="Senha"
-                FontSize="16"
-                FontWeight="Normal"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                HorizontalContentAlignment="Left"
-                Padding="0"
-                Margin="60,325,0,0"
-                />
+        <Label Grid.Column="1" Grid.Row="3"
+               Content="Senha"
+               FontSize="16"
+               Width="48"
+               Height="19"
+               FontWeight="Normal"
+               FontFamily="Inter"
+               HorizontalAlignment="Left"
+               HorizontalContentAlignment="Left"
+               Padding="0"
+               Margin="0,85,0,0"
+               />
 
-        <TextBox
+        <TextBox Grid.Row="4" Grid.Column="1"
             Text="{Binding Password}"
             Width="360"
             Height="60"
             Background="LightGray"
-            HorizontalAlignment="Left" 
             HorizontalContentAlignment="Left"
-            VerticalAlignment="Top"
             VerticalContentAlignment="Center"
             Foreground="Black"
             FontSize="16"
-            Padding="10"
-            Margin="60,360,0,0"
+            FontFamily="Inter"
+            Margin="0,16,0,0"
             />
 
-        <Button Content="Acessar"
+        <Button Grid.Column="1" Grid.Row="5"
+                Content="Acessar"
                 Width="240"
                 Height="60"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Margin="0,540,0,0"
                 FontSize="16"
-                FontWeight="Normal" Click="Button_Click"/>
+                FontFamily="Inter"
+                FontWeight="Normal"
+                Margin="0,120,0,0"
+                Click="Button_Click"/>
+
+
+
     </Grid>
 </Window>
